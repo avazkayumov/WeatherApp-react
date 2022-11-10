@@ -35,6 +35,7 @@ const Main = () => {
     }
   }
   filterList();
+  console.log(listArrays)
   listArrays.pop();
 
   function showMoreFunc() {
@@ -138,6 +139,7 @@ const Wrapper = styled.div`
 
   .weathers-container {
     display: grid;
+    
     grid-template-columns: 1fr 1fr;
     gap: 30px;
   }
@@ -198,14 +200,16 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    position: relative;
   }
 
   .otherdays-weather {
     display: flex;
     gap: 20px;
     justify-content: center;
-    flex-wrap: wrap;
-
+    flex-wrap: wrap;  
+    position: relative;
+    
     .otherdays-container {
       width: 120px;
       min-height: 150px;
@@ -219,14 +223,21 @@ const Wrapper = styled.div`
       border: 1px solid white;
     }
   }
-
+  
   .otherdays-moreinfo {
+    position: absolute;
+    top: 350px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 20px 10px;
     padding: 40px;
+
+    @media (min-width: 1810px) {
+      top: 170px;
+    }
+
     @media (max-width: 500px) {
       padding: 20px;
       grid-template-columns:repeat(auto-fit, minmax(60px, 1fr));
@@ -241,7 +252,8 @@ const Wrapper = styled.div`
       position: relative;
       z-index: 100;
 
-      border: 2px solid gray;
+      /* border: 2px solid gray; */
+      background: #c9c9c9;
       padding: 10px;
 
       img {
@@ -249,6 +261,7 @@ const Wrapper = styled.div`
       }
 
       .moreinfo-time {
+        /* color: white; */
         text-align: center;
         font-size: 16px;
         @media (max-width: 500px) {
@@ -257,11 +270,14 @@ const Wrapper = styled.div`
       }
 
       .moreinfo-degree_container {
-        
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 5px;
+
+        /* p {
+          color: white;
+        } */
       }
     }
   }
