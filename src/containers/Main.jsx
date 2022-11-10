@@ -223,7 +223,6 @@ const Wrapper = styled.div`
   .otherdays-moreinfo {
     display: flex;
     flex-wrap: wrap;
-    /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) ; */
     align-items: center;
     justify-content: center;
     gap: 20px 10px;
@@ -239,6 +238,9 @@ const Wrapper = styled.div`
     }
 
     .moreinfo-container {
+      position: relative;
+      z-index: 100;
+
       border: 2px solid gray;
       padding: 10px;
 
